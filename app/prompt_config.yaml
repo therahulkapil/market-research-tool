@@ -1,0 +1,35 @@
+topics:
+  recent_news_announcements:
+    description: "Provides recent news and updates across various sectors for a company."
+    sub_prompts:
+      - key: "corporate_announcements"
+        name: "Corporate Announcements"
+        file: "app/prompts/recent_news_announcements/01_corporate_announcements.txt"
+        active: true
+      - key: "financial_news"
+        name: "Financial News"
+        file: "app/prompts/recent_news_announcements/02_financial_news.txt"
+        active: true
+      - key: "business_development"
+        name: "Business Development"
+        file: "app/prompts/recent_news_announcements/03_business_development.txt"
+        active: faslse
+      - key: "product_service_dev"
+        name: "Product and Service Developments"
+        file: "app/prompts/recent_news_announcements/04_product_service_dev.txt"
+        active: false
+      - key: "market_competitive"
+        name: "Market Competitive"
+        file: "app/prompts/recent_news_announcements/05_market_competitive.txt"
+        active: false
+  business_overview:
+    description: "Provides the comprehensive overview across various sectors for a company."
+    sub_prompts:
+      - key: "key_corporate_information"
+        name: "Key Corporate Information"
+        file: "app/prompts/business_overview/01_key_corporate_information.txt"
+        active: true
+      - key: "leadership_overview"
+        name: "Leadership Overview"
+        file: "app/prompts/business_overview/02_leadership_overview.txt"
+        active: true

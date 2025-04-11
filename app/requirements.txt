@@ -1,0 +1,7 @@
+fastapi
+uvicorn[standard]
+pyyaml
+openai
+httpx
+aiofiles
+requests

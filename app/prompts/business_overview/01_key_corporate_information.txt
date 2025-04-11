@@ -1,0 +1,1 @@
+Extract the information of the key executives of [company name] and present in well structure table and display the company with main headingss.
