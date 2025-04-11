@@ -13,7 +13,7 @@ from fastapi.middleware.cors import CORSMiddleware
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-api_key = os.environ.get('API_KEY')
+api_key = os.environ.get('GPT_API_KEY')
 
 # Load configuration from YAML file
 CONFIG_FILE = "app/prompt_config.yaml"
@@ -59,7 +59,7 @@ async def stream_gpt4_api(prompt_text: str, sub_prompt_key: str, company_name: s
     """
 
     client = OpenAI(
-        api_key = os.environ.get('API_KEY'),
+        api_key = os.environ.get('GPT_API_KEY'),
     )
     if not prompt_text:
         yield f"skipped {sub_prompt_key} due to empty prompt"

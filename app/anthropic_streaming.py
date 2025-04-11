@@ -57,7 +57,7 @@ async def stream_anthropic_api(prompt_text: str, sub_prompt_key: str, company_na
         return
 
     logger.info(f"--- Calling Anthropic API for: {sub_prompt_key} ---")
-    api_key = os.environ.get('API_KEY')
+    api_key = os.environ.get('ANTHROPIC_API_KEY')
     client = anthropic.Client(api_key=api_key)
     
     prompt_template = """
