@@ -1,6 +1,6 @@
 from openai import AzureOpenAI, OpenAI
 from app.utils.token_generator import generate_token
-import logging
+import logging, os
 
 async def call_gpt4_api(prompt_text: str, sub_prompt_key: str, company_name: str) -> str:
     # token = generate_token()
@@ -9,8 +9,11 @@ async def call_gpt4_api(prompt_text: str, sub_prompt_key: str, company_name: str
     #     api_version="2023-05-15",
     #     azure_endpoint="https://your-azure-endpoint",
     # )
+
+    # use this key for testing
+    # key="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"
     client = OpenAI(
-        api_key="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"
+        api_key=os.environ.get('API_KEY'),
     )
 
     if not prompt_text:

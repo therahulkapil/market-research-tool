@@ -58,7 +58,9 @@
 
 #     logger.info(f"--- Calling Anthropic API for: {sub_prompt_key} ---")
 
-#     client = anthropic.Client(api_key="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")
+#     # use this key for testing
+#     # key="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"
+#     client = anthropic.Client(api_key=os.environ.get('API_KEY'))
     
 #     prompt_template = """
 #     {input}
@@ -166,7 +168,7 @@
 
 
 
-import yaml
+import yaml,os
 import logging
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import StreamingResponse
@@ -223,8 +225,11 @@ async def stream_gpt4_api(prompt_text: str, sub_prompt_key: str, company_name: s
     """
     Call the GPT-4 API with the given prompt and stream the response.
     """
+
+    # use this key for testing
+    # key="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"
     client = OpenAI(
-        api_key="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"
+        api_key=os.environ.get('API_KEY'),
     )
     if not prompt_text:
         yield f"skipped {sub_prompt_key} due to empty prompt"
@@ -281,8 +286,10 @@ async def call_gpt4_api(prompt_text: str, sub_prompt_key: str, company_name: str
     """
     Call the GPT-4 API with the given prompt (non-streaming version).
     """
+    # use this key for testing
+    # key="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"
     client = OpenAI(
-        api_key="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"
+        api_key=os.environ.get('API_KEY'),
     )
     if not prompt_text:
         return f"skipped {sub_prompt_key} due to empty  prompt"
